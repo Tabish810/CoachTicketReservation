@@ -1,0 +1,27 @@
+.container{
+    
+        margin-top:40px;
+    
+    }
+    
+    form{
+            margin-top:40px;
+            }
+    .search-table{
+    
+        margin-top:80px;
+    
+    }  
+    th,td{
+        text-align: center;
+    }      
+    input[type=text],input[type=time],select,input[type=number]{
+        text-align: center;
+        border-left: 20px solid green;
+    }
+    input[type=text]:focus,select:focus,input[type=time]:focus,input[type=number]:focus{
+        border-left: 20px solid skyblue;
+    }
+    fieldset{
+        width:180px;
+    }

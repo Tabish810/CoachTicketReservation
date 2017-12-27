@@ -1,0 +1,39 @@
+<div class="container">		
+    <fieldset><legend>Coach Information</legend></fieldset>
+    <form (submit)="validateForm()">
+        <div class="form-group row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <input class="form-control" required name="coach_no" type="text" placeholder="Coach Number" [(ngModel)]="input.coach_no">
+            </div>
+            <div class="col-md-4">
+                    <input class="form-control" required name="coach_name" [(ngModel)]="input.coach_name" type="text" placeholder="Name Of Coach" >
+            </div>
+        </div>            
+        <div class="form-group row"> 
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <input class="form-control" [(ngModel)]="input.timings" name="timings" type="time" placeholder="Timings">
+            </div>                 
+             <div class="col-md-4">
+                <input class="form-control" required name="destination_loc"[(ngModel)]="input.destination_loc" type="text" placeholder="Destination Location" >        
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                 <input class="form-control" [(ngModel)]="input.fare" name="fare" required type="number" placeholder="Fare" >
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-1"></div>
+             <div class="col-md-4">
+                <input class="btn btn-success form-control" (click)="onClick()" type="submit">
+            </div>
+            <div class="col-md-4">
+                <input class="btn btn-danger form-control" type="Reset" />
+            </div>
+       </div>
+    </form>
+</div>	

@@ -1,0 +1,161 @@
+<div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+<div class="modal-content">
+     <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <div class="container" >
+        <h4 class="modal-title">
+        Drivers Information
+        </h4>
+    </div>
+<div class="modal-body">
+  <form (submit)="validateForm()">
+  <div class="form-group row">
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+          <input class="form-control"  required [(ngModel)]="modelInput.coach_number" name="coach_number" type="text"  placeholder="Coach Number"/>
+        </div>
+      <div class="col-md-4">
+          <input required  class="form-control" [(ngModel)]="modelInput.name"  name="name"  type="text" placeholder="Name Of Driver"/>
+      </div>
+  </div>            
+  <div class="form-group row"> 
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+          <input class="form-control" required [(ngModel)]="modelInput.coach_name" name="coach_name"  type="text"placeholder="Coach Name">
+      </div>                 
+       <div class="col-md-4">
+          <input required class="form-control" [(ngModel)]="modelInput.cnic" name="cnic" type="number" placeholder="CNIC">
+          
+      </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+          <input class="form-control" required type="text" [(ngModel)]="modelInput.phone_no" name="phone_no"  placeholder="Cell No"/>
+      </div>
+      <div class="col-md-4">
+          <input class="form-control"required type="text" [(ngModel)]="modelInput.address" name="address"  placeholder="Address"/>
+     </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-md-1"></div>
+       <div class="col-md-4">
+          <input class="btn btn-success form-control" (click)="editPopUpRecords()" type="submit" value="Edit Record" >
+      </div>
+      <div class="col-md-4">
+          <input class="btn btn-danger form-control" type="Reset" value="Reset" />
+      </div>	
+  </div>
+</form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ </div>
+ </div>
+ </div>
+</div>
+</div>
+<!-- End of Hidden Div-->
+<div class="container infoDiv">
+    <div >
+      <h3 class="text-center">Drivers Information</h3>
+      <div class="row  search-form">
+        <form>
+          <label class="form-group col-md-2">
+            <input routerLink="../save-driver-info" type="button" value="Add Records" class="form-control btn btn-warning">
+          
+          </label>
+          <div class="col-md-6"></div>
+          <label class="form-group col-md-4">
+            <input type="text"  class="form-control  search" name="search" [(ngModel)]="search" placeholder="Search By Name">
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered search-table">
+        <tr class="info active">
+          <th>Coach Number</th>
+          <th>Name</th>
+          <th>Coach Name</th>
+          <th>CNIC</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let items of mydata | filter:search">
+          <td #coachNO>{{items.coach_number}}</td>
+          <td >{{items.name | lowercase}}</td>
+          <td >{{items.coach_name | uppercase }}</td>
+          <td >{{items.cnic}}</td>
+          <td >{{items.phone_no}}</td>
+          <td >{{items.address}}</td>
+              <td>
+                <input type="button" class="btn btn-primary"  data-toggle="modal" data-target="#myModal" (click)="toggleDiv(items)" value="Edit">
+                <input type="button" (click)="onClick(items)"  [id]="items" class="btn btn-danger " value="X">
+            </td>
+        </tr>
+      </table>
+    </div>
+ 
+   <!-- Modal -->
+   <!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog"> -->
+    
+      <!-- Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">
+                Drivers Information
+          </h4>
+        </div>
+        <div class="modal-body">
+            <form>
+            <div class="form-group row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <input class="form-control" required [(ngModel)]="modelInput.coach_no" name="coach_number" type="text"  placeholder="Coach Number"/>
+                  </div>
+                <div class="col-md-4">
+                    <input required  class="form-control" [(ngModel)]="modelInput.name"  name="name"  type="text" placeholder="Name Of Driver"/>
+                </div>
+            </div>            
+            <div class="form-group row"> 
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <input class="form-control" required  [(ngModel)]="modelInput.coach_name" name="coach_name"  type="text"placeholder="Coach Name">
+                </div>                 
+                 <div class="col-md-4">
+                    <input required class="form-control"[(ngModel)]="modelInput.cnic" name="cnic" type="number" placeholder="CNIC">
+                    
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <input class="form-control" required type="number" [(ngModel)]="modelInput.phone_no" name="phone_no"  placeholder="Cell No"/>
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" required type="text" [(ngModel)]="modelInput.address" name="address"  placeholder="Address"/>
+               </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-1"></div>
+                 <div class="col-md-4">
+                    <input class="btn btn-success form-control" (click)="modelClick()" type="submit" value="Edit Record" >
+                </div>
+                <div class="col-md-4">
+                    <input class="btn btn-danger form-control" type="Reset" value="Reset" />
+                </div>	
+            </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

@@ -1,0 +1,47 @@
+		<div class="container table-responsive">
+			<div class="jumbotron">
+				<h3 class="text-center">Search By</h3>
+				<div class="col-lg-12  search-form" align="center">
+					<form>
+						<label class="form-group">Name <input type="text" name="name" [(ngModel)]="name" class="form-control" placeholder="search"></label>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<label class="form-group">CNIC <input  type="text"  name="cnic" [(ngModel)]="cnic" placeholder="CNIC"class="form-control"></label>
+					</form>
+				</div> 
+			</div>
+				<table class="table table-hover table-bordered search-table">
+					<tr class="info active" >
+						<th>Ticket Number</th>
+						<th>Coach Name</th>
+						<th>Customer Name</th>
+						<th>From</th>
+						<th>To</th>
+						<th>Departure Time</th>
+						<th>Seat No</th>
+						<th>Fare</th>
+						<th>Advance</th>
+						<th>Remaining</th>
+						<th>Phone</th>
+						<th>CNIC</th>
+						<th>Time</th>
+						<th>Date</th>
+					</tr> 
+					 <tr *ngFor ="let content of myData |cnic:cnic | customerName:name">
+						<td>{{content.ticket_number}}</td>
+						<td>{{content.coach_name}}</td>
+						<td>{{content.customer_name}}</td>
+						<td>{{content.from}}</td>
+						<td>{{content.to}}</td>
+						<td>{{content.departure_time}}</td>
+						<td>{{content.seat_no}}</td>
+						<td>{{content.fare}}</td>
+						<td>{{content.advance}}</td>
+						<td>{{content.remaining}}</td>
+						<td>{{content.phone}}</td>
+						<td>{{content.cnic}}</td>
+						<td>{{content.coach_time}}</td>
+						<td>{{content.date}}</td>						
+					</tr>
+				</table>
+			</div>
+		

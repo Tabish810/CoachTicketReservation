@@ -1,0 +1,39 @@
+/*css document*/
+.main{
+	margin-top:100px;
+	border:0px solid black;
+}
+.form_component{
+margin-top:50px;
+}
+legend{
+margin-left:40px;
+}
+fieldset{
+width:180px;
+}
+form{
+margin:0 0 0 100px;
+}
+input{
+	padding: 10px;
+	text-align: center;
+}
+select,option{
+	text-align-last:center;
+    padding-right: 29px;
+   
+}
+input[type=text],select,input[type=number],input[type=date]{
+	text-align: center;
+	border-left: 20px solid green;
+	padding: 5px;
+}
+input[type=text]:focus,select:focus,input[type=date]:focus,input[type=number]:focus{
+	border-left: 20px solid skyblue;
+}
+.btn{
+	height:auto;
+
+
+}

@@ -1,0 +1,21 @@
+.container{
+    
+        margin-top:40px;
+    
+    }
+    
+    .search-form{
+            margin:30px auto 0 auto;
+            }
+    .search-table{
+    
+        margin-top:80px;
+    
+    }     
+    input[type=date],select{
+        text-align: center;
+        border-left: 20px solid green;
+    }
+    input:focus{
+        border-left: 20px solid skyblue;
+    }

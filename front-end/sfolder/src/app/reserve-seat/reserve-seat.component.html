@@ -1,0 +1,79 @@
+<div class="container main" >		
+			<fieldset><legend>Reserve Seat</legend></fieldset>
+			<form (submit)="validateForm()">
+				<div class="form-group row">
+					<div class="col-md-5">
+						<input class="form-control" required type="text" [(ngModel)]="input.ticketno" name="ticket_no" placeholder="Enter Ticket Number">
+					</div>
+					<div class="col-md-5">
+						<select class="form-control"  [(ngModel)]="input.coachname" name="coach_name"required>
+							<option selected disabled>Select Coach</option>
+							<option *ngFor="let items of mydata3">{{items.coach_name}}</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-5">
+						<input class="form-control" [(ngModel)]="input.customer_name" name="customer_name" required type="text" placeholder="Enter Customer Name">
+					</div>
+					<div class="col-md-5">
+						<input class="form-control" name="from" readonly required type="text" value="Karachi">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-5">
+						<select class="form-control" [(ngModel)]="input.to" name="to" required >
+							<option selected disabled >Destination Location</option>
+							<option *ngFor="let items of mydata1">{{items.destination_loc}}</option>
+							
+						</select>
+					</div>
+					<div class="col-md-5">
+						<input type="text" [(ngModel)]="input.departure_time" name="departure_time" class="form-control" required placeholder="Departure Time">
+					</div>
+				</div>
+				<div class="form-group row">
+				  <div class="col-md-5">
+						<select class="form-control"  [(ngModel)]="input.coach_time" name="coach_time" required>
+							<option selected disabled>Coach Time</option>
+							<option *ngFor="let items of mydata2">{{items.timings}}</option>
+						</select>
+					</div>
+					<div class="col-md-5">
+						 <input class="form-control"[(ngModel)]="input.seat_no" name="seat_no"  required type="number" placeholder="Seat number"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-5">
+						<input class="form-control"[(ngModel)]="input.fare" name="fare"  required type="number" placeholder="Fare"/>
+					</div>
+					<div class="col-md-5">
+						 <input class="form-control" [(ngModel)]="input.advance" name="advance" required type="number" placeholder="Advance"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-5">
+						<input class="form-control" [(ngModel)]="input.remaining" name="remaining"  required type="number" placeholder="Remaining"/>
+					</div>
+					<div class="col-md-5">
+						<input class="form-control"[(ngModel)]="input.phone" name="phone"  required title="03101234567" type="number" pattern="03[0-9]{2}-(?!1234567)(?!1111111)(?!7654321)[0-9]{7}" placeholder="Cell No"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-5">
+						<input class="form-control" [(ngModel)]="input.cnic" name="cnic" required type="number" title="eg : 1310112345671" pattern="[0-9]{5}-(?!1234567)(?!1111111)(?!7654321)[0-9]{7}-[0-9]{1}"  placeholder="CNIC"/>
+				   </div>
+					<div class="col-md-5">
+						 <input class="form-control"[(ngModel)]="input.date" name="date"  required type="date" placeholder="Date"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					 <div class="col-md-5">
+						<input class="btn btn-success btn-lg form-control" (click)="onClick()" type="submit" value="Reserve Seat" >
+					</div>
+					<div class="col-md-5">
+						<input class="btn btn-danger btn-lg form-control" type="Reset" value="Reset" />
+					</div>	
+				</div>
+			</form>
+		</div>		
