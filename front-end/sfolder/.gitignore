@@ -13,14 +13,13 @@ i
 *.launch
 .settings/
 *.sublime-workspace
-node_modules
 # IDE - VSCode
+node_modules
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
 # misc
 /.sass-cache
 /connect.lock
@@ -33,7 +32,6 @@ testem.log
 # e2e
 /e2e/*.js
 /e2e/*.map
-/node_modules
 # System Files
 .DS_Store
 Thumbs.db

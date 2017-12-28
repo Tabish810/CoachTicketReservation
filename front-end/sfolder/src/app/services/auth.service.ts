@@ -10,12 +10,14 @@ authToken : any
 user : any;
 
   constructor(private http : Http) { }
+  
   authenticateUser(user){
     let headers =new Headers();
     headers.append('Content-Type','application/json');
     return this.http.post('http://localhost:3000/api/getLogin',user,{headers : headers})
     .map(res=>res.json());
   }
+
 
   storeUserData(token,user){
       localStorage.setItem("id_token",token);
@@ -29,7 +31,7 @@ user : any;
       localStorage.clear();
     }
     loggedIn(){
-      return tokenNotExpired();
+      return tokenNotExpired("id_token");    
     }
 
 }

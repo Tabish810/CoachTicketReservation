@@ -42,55 +42,58 @@ const appRoutes: Routes = [
    },
   {
     path: 'dashboard-body',
-   // canActivate:[AuthGuard],
+    canActivate:[AuthGuard],
     component: DashboardBodyComponent,
    },
    {
     path: 'search-seat',
+    canActivate:[AuthGuard],
     component: SearchSeatComponent,
-    //canActivate:[AuthGuard]
+  
    },
    {
     path: 'reserve-seat',
+     canActivate:[AuthGuard],
     component: ReserveSeatComponent,
-    //canActivate:[AuthGuard]
+   
    },
    {
     path: 'cancel-seat',
+    canActivate:[AuthGuard],
     component: CancelSeatComponent,
-    //canActivate:[AuthGuard]
+    
    },
    {
     path: 'save-coach-info',
-    component: SaveCoachInfoComponent,
-    //canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    component: SaveCoachInfoComponent
    },
    {
     path: 'save-driver-info',
-    component: SaveDriverInfoComponent,
-    //canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    component: SaveDriverInfoComponent
    },
    {
     path: 'set-driver-info',
-    component: SetDriverInfoComponent,
-    //canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    component: SetDriverInfoComponent
    },
    
    {
     path: 'set-coach-info',
-    component: SetCoachInfoComponent,
-    //canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    component: SetCoachInfoComponent
    },
    
   {
     path:'set-password', 
-    component : SetPasswordComponent,
-    //canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    component : SetPasswordComponent
   },
   {
     path: 'show-all-records',
-    component: ShowAllRecordsComponent,
-    //canActivate:[AuthGuard]
+    canActivate:[AuthGuard],
+    component: ShowAllRecordsComponent 
   }
 ];
 @NgModule({
